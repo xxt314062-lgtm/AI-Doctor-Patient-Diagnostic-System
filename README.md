@@ -1,6 +1,3 @@
-Here's the complete English version of your README.md file:
-
-```markdown
 # 🏥 AI Doctor-Patient Diagnostic System
 
 An AI doctor-patient diagnostic system based on the DeepSeek API, simulating real medical diagnosis scenarios through multi-agent collaboration, featuring a complete recording system and long-term learning mechanism.
