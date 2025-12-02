@@ -258,7 +258,105 @@ Patient: It seems more noticeable when exhaling, not so much when inhaling.
 
 Current Round: 3 | Questions: 1 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.10 | 📝 Collecting
 
-... (further interactions) ...
+💬 Doctor Asks Questions
+⏱️  API Response Time: 2.29s
+Doctor: You mentioned a whistling sound when breathing. Does it occur only during exhalation, or during inhalation as well?
+⏱️  API Response Time: 1.59s
+Patient: It seems more noticeable when exhaling, not so much when inhaling.
+
+Current Round: 3 | Questions: 2 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.20 | 📝 Collecting
+
+💬 Doctor Asks Questions
+⏱️  API Response Time: 2.26s
+Doctor: Is this whistling sound constant, or does it become more noticeable under specific circumstances (e.g., after exercise, exposure to cold air, or allergens)?
+⏱️  API Response Time: 1.92s
+Patient: Oh doctor, the sound seems to always be there, but it gets worse when I work, and I often feel breathless when sleeping at night.
+⏱️  API Response Time: 1.30s
+
+Current Round: 3 | Questions: 3 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.30 | 📝 Collecting
+
+💬 Doctor Asks Questions
+⏱️  API Response Time: 1.58s
+Doctor: How long have you been experiencing this breathing difficulty and nighttime breathlessness?
+⏱️  API Response Time: 2.16s
+Patient: About two or three weeks, with chest tightness and a whistling sound when breathing. Occasionally waking up breathless at night, worsens with activity.
+⏱️  API Response Time: 1.42s
+⏱️  API Response Time: 0.89s
+
+Current Round: 3 | Questions: 4 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.40 | 📝 Collecting
+
+💬 Doctor Asks Questions
+⏱️  API Response Time: 2.00s
+Doctor: Do you have a smoking history, or have you recently been exposed to dust, chemicals, or other irritating environments?
+⏱️  API Response Time: 2.63s
+Patient: Doctor, I've been having chest tightness lately, a whistling sound when breathing, and occasionally waking up breathless at night. It gets worse with activity, but I'm not sure when it started.
+⏱️  API Response Time: 1.40s
+⏱️  API Response Time: 1.28s
+
+Current Round: 3 | Questions: 5 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.50 | 📝 Collecting
+
+💬 Doctor Asks Questions
+⏱️  API Response Time: 1.74s
+Doctor: Do you have a history of asthma, allergic rhinitis, or other allergic conditions?
+⏱️  API Response Time: 2.22s
+Patient: Recently having some chest tightness, a whistling sound when breathing, and occasionally waking up breathless at night. It gets worse with activity, but I'm not sure when the episodes occur.
+⏱️  API Response Time: 0.96s
+⏱️  API Response Time: 1.21s
+
+Current Round: 3 | Questions: 6 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.60 | 📝 Collecting
+
+💬 Doctor Asks Questions
+⏱️  API Response Time: 1.43s
+Doctor: Do you have a history of asthma, allergic rhinitis, or other allergic conditions?
+⏱️  API Response Time: 2.06s
+Patient: Recently having some chest tightness, a whistling sound when breathing. Occasionally waking up breathless at night, gets worse with activity.
+⏱️  API Response Time: 0.93s
+⏱️  API Response Time: 1.39s
+
+Current Round: 3 | Questions: 7 | Tests: 0 | Total Cost: 0 | Remaining Budget: 500 | Patient Suspicion: 0.70 | 📝 Collecting
+
+🔬 Doctor Requests Test
+Doctor: Recommend a chest X-ray examination.
+Test Result: Chest X-ray shows no significant abnormalities.
+Test Cost: 150 yuan
+⏱️  API Response Time: 1.21s
+
+============================================================
+                           📊 Round Evaluation
+============================================================
+
+🤔 Doctor Considers Final Diagnosis...
+⏱️  API Response Time: 19.13s
+Doctor Diagnosis: Based on the doctor-patient dialogue and examination results, the most likely diagnosis is **Bronchial Asthma**.
+
+**Diagnostic Basis:**
+
+1.  **Typical Symptoms:**
+    *   **Wheezing:** Patient describes "a whistling sound when breathing," more noticeable during exhalation, which is a typical sign of asthma – wheezing.
+    *   **Difficulty Breathing:** Chief complaints of "chest tightness" and "breathing difficulty."
+    *   **Nighttime Symptoms:** "Occasionally waking up breathless at night" aligns with the characteristic of asthma worsening at night or in the early morning.
+    *   **Triggers:** "Gets worse with activity" suggests exercise may induce or exacerbate symptoms.
+
+2.  **Course of Illness:** Symptoms lasting "two or three weeks" is consistent with the chronic, recurrent nature of asthma.
+
+3.  **Examination Results:** Chest X-ray showing no significant abnormalities rules out structural or acute infectious lung diseases like pneumonia, pneumothorax, or pulmonary edema, supporting the diagnosis of a functional airway disease (such as asthma).
+
+**Differential Diagnosis & Recommendations:**
+
+*   **Chronic Obstructive Pulmonary Disease (COPD):** Usually involves a long-term smoking history with progressively worsening symptoms. However, the patient hasn't provided a clear smoking history, and the course is relatively short, making this less likely.
+*   **Cardiac Asthma:** Caused by left heart failure, typically accompanied by orthopnea, coughing pink frothy sputum, underlying heart disease, etc. Current evidence is insufficient.
+*   **Upper Airway Obstruction:** Can also present with stridor, but it's usually inspiratory, whereas the patient describes it as more noticeable during exhalation.
+
+**Next Steps:**
+1.  **Pulmonary Function Test:** Perform **bronchodilator test** or **bronchial provocation test**, which is the gold standard for asthma diagnosis.
+2.  **Allergen Testing:** Inquire about and test for possible allergen exposure (e.g., pollen, dust mites, pet dander) to identify triggers.
+3.  **Detailed History Supplement:** Need to explicitly ask about personal and family history of allergies (e.g., allergic rhinitis, eczema), smoking history, occupational/environmental exposure history, etc.
+4.  **Therapeutic Diagnosis:** Before definitive diagnosis, consider trial treatment with short-acting β2-agonists (e.g., salbutamol) under medical supervision. Rapid symptom relief would strongly support an asthma diagnosis.
+
+**Summary:** The patient presents with typical symptoms of episodic wheezing, chest tightness, nighttime worsening, and exercise-induced triggers. Combined with X-ray findings ruling out other lung diseases, bronchial asthma is the most likely diagnosis. Further confirmation and severity assessment require pulmonary function testing.
+✅ Consultation Successful!
+
+📈 Learning Progress: Recent Success Rate: 66.7% | Avg Questions: 5.7 | Avg Tests: 2.0
 
 ================================================================================
                             🎓 System Final Report
