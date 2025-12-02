@@ -56,7 +56,7 @@ DEEPSEEK_API_KEY=your_api_key_here
 4. Copy the API key and paste it into the .env file
 
 ### 2. Run the Game
-**Interactive Mode** (Recommended):
+**Interactive Mode** (Need to type enter to go to next round):
 ```bash
 python main.py
 # or
