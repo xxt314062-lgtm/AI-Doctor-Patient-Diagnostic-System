@@ -85,7 +85,7 @@ Has two types of actions:
 
 **Patient AI:** Answers questions based on actual condition but may misunderstand (e.g., considering eating a few hours ago as 'fasting', not considering beer as 'alcohol').
 
-**Trust System:** Consultation increases patient suspicion by 0.1, tests increase it by 0.05. Diagnosis fails if suspicion exceeds 1.
+**Trust System:** Consultation increases patient suspicion by 0.1, tests increase it by 0.15. Diagnosis fails if suspicion exceeds 1.
 
 **Budget System:** Each diagnosis starts with an initial budget of 500. The patient has an ideal budget. The doctor only knows the initial budget amount and must control testing costs within this limit. Diagnosis fails if the final cost significantly exceeds the patient's ideal budget. Budget thresholds relate to personality-based ideal cost ranges and spending sensitivity.
 
@@ -94,14 +94,14 @@ Has two types of actions:
 ### Patient Personality Types (8 Types)
 | Personality  | Suspicion Growth | Cost Sensitivity | Ideal Cost Range |
 |--------------|------------------|------------------|------------------|
-| Cautious     | 0.15             | 0.8              | 80-150 yuan      |
-| Casual       | 0.08             | 0.4              | 120-200 yuan     |
-| Hypochondriac| 0.25             | 0.3              | 150-250 yuan     |
-| Frugal       | 0.12             | 0.9              | 50-100 yuan      |
-| Impatient    | 0.20             | 0.5              | 100-180 yuan     |
-| Dependent    | 0.05             | 0.6              | 200-300 yuan     |
-| Rational     | 0.10             | 0.7              | 150-220 yuan     |
-| Skeptical    | 0.30             | 0.4              | 80-120 yuan      |
+| Cautious     | 0.15             | 0.8              | 160-300 yuan      |
+| Casual       | 0.08             | 0.4              | 240-400 yuan     |
+| Hypochondriac| 0.25             | 0.3              | 300-500 yuan     |
+| Frugal       | 0.12             | 0.9              | 100-200 yuan      |
+| Impatient    | 0.20             | 0.5              | 200-360 yuan     |
+| Dependent    | 0.05             | 0.6              | 400-600 yuan     |
+| Rational     | 0.10             | 0.7              | 300-440 yuan     |
+| Skeptical    | 0.30             | 0.4              | 160-240 yuan      |
 
 ### Test Items (20+ Types)
 Include: Blood Test, Urinalysis, Electrocardiogram (ECG), Chest X-ray, CT Scan, MRI, Ultrasound, Gastroscopy, Liver Function Test, Kidney Function Test, Blood Glucose Test, Lipid Profile, Bone Density Test, Endoscopy, Biopsy, Electroencephalogram (EEG), Pulmonary Function Test, Skin Allergy Test, etc.
@@ -175,14 +175,17 @@ Migraine, Gastritis, Allergic Rhinitis, Common Cold, Hypertension, Diabetes, Ast
 ## 🤖 AI System Details
 ### 1. Doctor Agent
 **Goal:** Correctly diagnose disease, control costs, maintain patient trust
+
 **Capabilities:**
 - Intelligent questioning (reasoning based on conversation history)
 - Intelligent test selection (based on symptoms and relevance)
 - Final diagnosis (comprehensive analysis of all information)
+
 **Learning Mechanism:** Learns from each round's outcome, optimizes questioning and testing strategies
 
 ### 2. Patient Agent
 **Goal:** Describe condition truthfully, but with possible misunderstandings
+
 **Characteristics:**
 - Personality affects suspicion growth and cost sensitivity
 - May misunderstand doctor's questions
@@ -190,7 +193,9 @@ Migraine, Gastritis, Allergic Rhinitis, Common Cold, Hypertension, Diabetes, Ast
 
 ### 3. Medical System
 **Test Relevance:** Each test has varying diagnostic value for different diseases
+
 **Accuracy Simulation:** Test results may be true positive, true negative, or false negative
+
 **Cost System:** Different tests have different costs, affecting patient trust
 
 ## 🧠 Long-Term Learning System
