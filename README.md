@@ -147,10 +147,10 @@ Migraine, Gastritis, Allergic Rhinitis, Common Cold, Hypertension, Diabetes, Ast
     T --> U[Execute Test / Deduct Cost]
     U --> V[Update Total Cost]
     
-    S --> W{Round End Condition? (Success/Failure)}
+    S --> W{Round End Condition? （Success/Failure)}
     V --> W
     
-    W -->|No (Budget Exceeded or Trust Lost)| Y
+    W -->|No （Budget Exceeded or Trust Lost）| Y
     W -->|Yes| X[Final AI Diagnosis, Evaluate Correctness]
     
     X -->|Diagnosis Correct or Failed| Y[Evaluate Round Result]
