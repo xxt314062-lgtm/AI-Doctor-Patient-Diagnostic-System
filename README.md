@@ -155,10 +155,10 @@ Migraine, Gastritis, Allergic Rhinitis, Common Cold, Hypertension, Diabetes, Ast
     （Success/Failure）}
     V --> W
     
-    W -->|No （Exceed Budget）| Y
+    W -->|No （Exceed Budget or Loss All Trust）| Y
     W -->|Yes| X[Final AI Diagnosis, Check Result Accuracy]
     
-    X --> Y[Evaluate Round Result]
+    X -->|Diagnose succressful or in failure| Y[Evaluate Round Result]
     Y --> Z[Doctor Learning Update]
     Z --> AA[Save Current Round Record]
     
