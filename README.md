@@ -2,6 +2,9 @@
 
 An AI doctor-patient diagnostic system based on the DeepSeek API, simulating real medical diagnosis scenarios through multi-agent collaboration, featuring a complete recording system and long-term learning mechanism.
 
+## Inspiration and introduction
+The inspiration is from my real medical experience, I noticed that patinets are always hard to decribe their symptoms accuratly, which make doctors hard to judge and force them ask quetion repeatly or let patients do many medical examinations. Both the medical time and cost of treatment will be increased greatly. Therefore, based on this inspiration, I make a AI Doctor-Patient Diagnostic System. It can continuously learns from each diagnostic rounds under the constraints such as limiting the number of symptom inquiries and the patient's budget. At the end, the agent doctor can diagnose diseases efficiently.
+
 ## ✨ Features
 **Dual-Agent System**: Interactive diagnosis between Doctor AI and Patient AI
 
@@ -19,17 +22,17 @@ An AI doctor-patient diagnostic system based on the DeepSeek API, simulating rea
 ```
 main-dir/
 ├── readme.md
-├── AI_doctor-patient_diagnostic_system-CN/
-    ├──doctor_memory/       # Doctor's long-term memory directory
-    ├──medical_records/     # Game records directory
-    ├──round_logs/          # Round logs directory
+├── AI_doctor-patient_diagnostic_system-CN/ #Chinese version
+    ├──doctor_memory/       # Doctor's long-term memory directory(The file it will be automatically generated after the first run)
+    ├──medical_records/     # Game records directory (The file it will be automatically generated after the first run)
+    ├──round_logs/          # Round logs directory (The file it will be automatically generated after the first run)
     ├──.env                 # Environment file
     ├──main.py              # Main program
     ├──requirements.txt     # Dependencies
-├──AI_doctor-patient_diagnostic_system-EN/
-    ├──doctor_memory/       # Doctor's long-term memory directory
-    ├──medical_records/     # Game records directory
-    ├──round_logs/          # Round logs directory
+├──AI_doctor-patient_diagnostic_system-EN/ #English version
+    ├──doctor_memory/       # Doctor's long-term memory directory (The file it will be automatically generated after the first run)
+    ├──medical_records/     # Game records directory (The file it will be automatically generated after the first run)
+    ├──round_logs/          # Round logs directory (The file it will be automatically generated after the first run)
     ├──.env                 # Environment file
     ├──main.py              # Main program
     ├──requirements.txt     # Dependencies
@@ -55,38 +58,42 @@ DEEPSEEK_API_KEY=your_api_key_here
 ### 2. Run the Game
 **Interactive Mode** (Recommended):
 ```bash
-python werewolf.py
+python main.py
 # or
-python3 werewolf.py
+python3 main.py
 ```
 
 **Auto Mode** (No interaction required):
 ```bash
-python werewolf.py --auto
+python main.py --auto
 # or
-python3 werewolf.py --auto
+python3 main.py --auto
 ```
 
 **Specify Number of Rounds**
 ```bash
-python doc3.py --rounds 10  # Run 10 rounds
+python main.py --rounds 10  # Run 10 rounds
 ```
 
 ## 🎮 Game Rules
 
 ### Core Mechanics
-**Doctor AI:**
-Has two types of actions:
-1. Ask questions during consultation: Patient may answer with misunderstandings, and increases patient suspicion.
-2. Request examinations: High probability of accurate results, but consumes patient budget.
+**Doctor AI:**  
+Has two possible actions:  
+1. Ask the patient questions to gather more information. However, the patient's responses may be misunderstood, and this action will increase the patient's suspicion level.  
+2. Request the patient to undergo tests, which is likely to yield accurate results but consumes the patient's budget.  
 
-**Patient AI:** Answers questions based on actual condition, but may have misunderstandings (e.g., considering eating a few hours ago as 'fasting', not considering beer as 'drinking alcohol').
+**Patient AI:**  
+Answers questions based on their actual condition, but may provide misleading information due to misunderstandings. For example, they might consider having eaten a few hours ago as "fasting," or not regard drinking beer as "having consumed alcohol."  
 
-**Trust System:** Consultation increases patient suspicion by 0.1, examinations increase by 0.05. If suspicion exceeds 1, diagnosis fails.
+**Trust System:**  
+Asking questions increases the patient's suspicion level by 0.1, while requesting tests increases it by 0.05. Diagnosis is considered a failure if the suspicion level exceeds 1.  
 
-**Budget System:** Each diagnosis has 500 initial budget. Patient sets ideal budget. Doctor must control examination costs within initial budget. If cost exceeds patient's ideal budget, diagnosis fails.
+**Budget System:**  
+Each diagnosis session starts with a budget of 500 units. The patient sets an ideal budget, and the doctor must manage testing costs within this constraint. If the total expenses exceed the patient's ideal budget, the diagnosis is considered a failure.  
 
-**Success Conditions:** Correct diagnosis + Reasonable cost + Patient trust not lost
+**Success Conditions:**  
+Correct diagnosis + Reasonable cost + Patient's trust is maintained.
 
 ### Patient Personality Types (8 types)
 | Personality    | Suspicion Growth | Cost Sensitivity | Ideal Cost Range |
@@ -165,7 +172,7 @@ Migraine, Gastritis, Allergic Rhinitis, Common Cold, Hypertension, Diabetes, Ast
     %% Data Flow Connections
     R -.->|Conversation History| Q
     S -.->|Suspicion Increase| P
-    V -.->|Deduct Budget| P
+    V -.->|Deduct Budget,Suspicion Increase| P
     Z -.->|Update Memory| G
     AA -.->|Save Logs| E
 ```
@@ -280,13 +287,13 @@ TEMPERATURE_DOCTOR_DIAGNOSIS = 0.3    # Doctor diagnosis - Low temperature ensur
 ## 🧪 Testing & Validation
 ```
 # Verify Python syntax
-python3 -m py_compile doc3.py
+python3 -m py_compile main.py
 
 # View help information
-python3 doc3.py --help
+python3 main.py --help
 
 # Run test game (3 rounds auto mode)
-python3 doc3.py --auto --rounds 3
+python3 main.py --auto --rounds 3
 ```
 
 ## 🔧 Customization & Extension
